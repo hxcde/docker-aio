@@ -1,4 +1,4 @@
-# Docker-Installer
+# Docker Auto Installer
 Docker install scripts for Proxmox Containers
 
 ## Alpine
