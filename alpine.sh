@@ -1,7 +1,7 @@
 echo Starting docker installation
-apk add docker -y
+apk add docker
 rc-update add docker boot
 service docker start
-apk add docker-compose -y
+apk add docker-compose
 echo Docker Installed
 docker ps
