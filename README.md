@@ -32,7 +32,7 @@ Then paste the script in the machines console
 bash -c "$(curl -L https://raw.githubusercontent.com/hxcde/docker-auto-installer/main/ubuntu.sh)"
 ```
 ## CentOS
-Then paste the script in the machines console
+Paste the script in the machines console
 ```bash
 bash -c "$(curl -L https://raw.githubusercontent.com/hxcde/docker-auto-installer/main/centos.sh))"
 ```
