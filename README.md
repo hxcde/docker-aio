@@ -1,6 +1,7 @@
 # Docker Auto Installer
-- Docker install scripts for Proxmox Containers.
-- Just run the command in the containers console.
+Docker install scripts for Proxmox Containers.
+
+Just run the command in the containers console.
 
 ## Alpine
 ```bash
