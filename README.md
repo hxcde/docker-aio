@@ -8,3 +8,6 @@ sh -c "$(curl -L https://raw.githubusercontent.com/hxcde/Docker-Installer/main/a
 ## Debian
 bash -c "$(curl -L https://raw.githubusercontent.com/hxcde/docker-auto-installer/main/debian.sh)"
 - If there is an error because curl is missing, install it with 'apt-get install curl'
+## Ubuntu
+bash -c "$(curl -L https://raw.githubusercontent.com/hxcde/docker-auto-installer/main/ubuntu.sh)"
+- If there is an error because curl is missing, install it with 'apt-get install curl'
