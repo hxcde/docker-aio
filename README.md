@@ -31,3 +31,12 @@ Then paste the script in the containers console
 ```bash
 bash -c "$(curl -L https://raw.githubusercontent.com/hxcde/docker-auto-installer/main/ubuntu.sh)"
 ```
+## CentOS
+First install curl on the container
+```bash
+yum install -y curl
+```
+Then paste the script in the containers console
+```bash
+bash -c "$(curl -L https://raw.githubusercontent.com/hxcde/docker-auto-installer/main/centos.sh))"
+```
