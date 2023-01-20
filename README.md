@@ -34,5 +34,5 @@ bash -c "$(curl -L https://raw.githubusercontent.com/hxcde/docker-auto-installer
 ## CentOS
 Paste the script in the machines console
 ```bash
-bash -c "$(curl -L https://raw.githubusercontent.com/hxcde/docker-auto-installer/main/centos.sh))"
+bash -c "$(curl -L https://raw.githubusercontent.com/hxcde/docker-auto-installer/main/centos.sh)"
 ```
