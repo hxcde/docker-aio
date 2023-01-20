@@ -10,7 +10,7 @@ apk add curl
 ```
 Then paste the script in the machines console
 ```bash
-sh -c "$(curl -L https://raw.githubusercontent.com/hxcde/Docker-Installer/main/alpine.sh)"
+sh -c "$(curl -L https://raw.githubusercontent.com/hxcde/docker-auto-installer/main/alpine.sh)"
 ```
 - I recommend using Alpine 3.15 and not 3.16. Alpine 3.16 creates OCI errors.
 ## Debian
