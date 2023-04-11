@@ -14,9 +14,9 @@ sh -c "$(curl -L https://raw.githubusercontent.com/hxcde/docker-auto-installer/m
 ```
 - I recommend using Alpine 3.15 and not 3.16. Alpine 3.16 creates OCI errors.
 ## Debian
-First install curl on the machine
+First install curl and sudo on the machine
 ```bash
-apt-get install curl -y
+apt-get install curl sudo -y
 ```
 Then paste the script in the machines console
 ```bash
