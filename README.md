@@ -1,7 +1,7 @@
 # Docker Auto Installer
 Docker install scripts for linux machines or containers.
 
-Just run the commands in the console as root.
+Just run the commands in the console as root user.
 
 ## Alpine
 First install curl on the machine
