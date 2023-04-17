@@ -38,7 +38,7 @@ fi
 read -p "Do you want to install Docker? (y/n) " INSTALL_DOCKER
 if [ "$INSTALL_DOCKER" = "y" ]; then
     echo "Installing Docker ..."
-    if [ "$PACKAGE_MANAGER" = "apt-get" ] then
+    if [ "$PACKAGE_MANAGER" = "apt-get" ]; then
         bash -c "$(curl -L https://git.moelle.space/hxcde/docker-auto-installer/raw/branch/main/debian.sh)"
     elif [ "$PACKAGE_MANAGER" = "apt-get-ubuntu" ]; then
         bash -c "$(curl -L https://git.moelle.space/hxcde/docker-auto-installer/raw/branch/main/ubuntu.sh)"
