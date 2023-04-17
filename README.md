@@ -1,4 +1,4 @@
-# Docker Auto Installer
+# Docker Auto Installer #oneforall
 Docker install scripts for linux machines or containers.
 Just run the commands in the console as root user.
 
