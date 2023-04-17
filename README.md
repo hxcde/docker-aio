@@ -9,8 +9,9 @@ sh -c "$(curl -L https://git.moelle.space/hxcde/docker-auto-installer/raw/branch
 ```
 
 
-
-
+<br>
+<br>
+<br>
 ## Older version below
 ## Alpine
 First install curl on the machine
