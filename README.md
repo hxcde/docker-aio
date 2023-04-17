@@ -3,7 +3,7 @@ Docker automatic install script for linux machines or containers.
 Just run the commands in the console as root user.
 
 - Works on `Debian`,`Ubuntu`,`CentOS`,`Alpine`,`OpenSuse`
-- You need to install curl and sudo on your system.
+- You need to install curl on your system.
 #### Paste the script in the machines console
 ```bash
 sh -c "$(curl -L https://git.moelle.space/hxcde/docker-auto-installer/raw/branch/main/install.sh)"
