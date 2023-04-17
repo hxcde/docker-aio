@@ -96,6 +96,3 @@ while true; do
       echo "Skipping Docker Compose installation."
       break
       ;;
-    * )
-      echo "Please answer yes (y) or no (n)."
-      ;;
