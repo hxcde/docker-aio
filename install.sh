@@ -25,14 +25,12 @@ fi
 echo "Installing Docker..."
 if [ "$DISTRO" = "debian" ] || [ "$DISTRO" = "ubuntu" ]; then
     bash -c "$(curl -L https://git.moelle.space/hxcde/docker-auto-installer/raw/branch/main/debian.sh)"
+    systemctl start docker
 elif [ "$DISTRO" = "redhat" ]; then
     bash -c "$(curl -L https://git.moelle.space/hxcde/docker-auto-installer/raw/branch/main/centos.sh)"
+    systemctl start docker
 elif [ "$DISTRO" = "alpine" ]; then
     sh -c "$(curl -L https://git.moelle.space/hxcde/docker-auto-installer/raw/branch/main/alpine.sh)"
 fi
-
-# Start Docker
-echo "Starting Docker..."
-systemctl start docker
 
 echo "Docker and Docker Compose installation completed."
