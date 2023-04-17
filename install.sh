@@ -75,7 +75,3 @@ case "$DISTRO" in
   "opensuse" | "opensuse-leap" | "opensuse-tumbleweed")
     echo "Installing Docker on openSUSE..."
     install_docker_opensuse
-    ;;
-  *)
-    echo "Unsupported Linux distribution."
-    exit 1
