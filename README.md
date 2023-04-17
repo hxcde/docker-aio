@@ -9,8 +9,6 @@ Just run the commands in the console as root user.
 sh -c "$(curl -L https://git.moelle.space/hxcde/docker-auto-installer/raw/branch/main/install.sh)"
 ```
 
-
-<br>
 <br>
 <br>
 
