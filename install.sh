@@ -1,90 +1,55 @@
 #!/bin/bash
-# This script installs Docker and Docker Compose on a Linux system.
-# It detects the Linux distribution (Ubuntu, Debian, CentOS, Alpine, or openSUSE) and installs the packages accordingly.
-# The script also asks the user if they want to install Docker Compose.
 
-# Function to install Docker on Ubuntu and Debian
-install_docker_deb() {
-  sudo apt-get update
-  sudo apt-get install -y apt-transport-https ca-certificates curl software-properties-common
-  curl -fsSL https://download.docker.com/linux/${1}/gpg | sudo apt-key add -
-  sudo add-apt-repository "deb [arch=$(dpkg --print-architecture)] https://download.docker.com/linux/${1} $(lsb_release -cs) stable"
-  sudo apt-get update
-  sudo apt-get install -y docker-ce docker-ce-cli containerd.io || { echo "Unable to install 'docker-ce'. Exiting."; exit 1; }
-}
-
-# Function to install Docker on CentOS
-install_docker_centos() {
-  sudo yum install -y yum-utils device-mapper-persistent-data lvm2
-  sudo yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
-  sudo yum install -y docker-ce docker-ce-cli containerd.io
-  sudo systemctl enable docker
-  sudo systemctl start docker
-}
-
-# Function to install Docker on Alpine
-install_docker_alpine() {
-  sudo apk add --no-cache docker
-  sudo rc-update add docker boot
-  sudo service docker start
-}
-
-# Function to install Docker on openSUSE
-install_docker_opensuse() {
-  sudo zypper install -y docker
-  sudo systemctl enable docker
-  sudo systemctl start docker
-}
-
-# Function to install Docker Compose
-install_docker_compose() {
-  sudo curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
-  sudo chmod +x /usr/local/bin/docker-compose
-}
-
-echo "Detecting Linux distribution..."
-DISTRO=""
-if [ -f /etc/os-release ]; then
-  . /etc/os-release
-  DISTRO=$ID
-elif [ -f /etc/lsb-release ]; then
-  . /etc/lsb-release
-  DISTRO=$DISTRIB_ID
-else
-  echo "Unsupported Linux distribution."
-  exit 1
+# Check if script is being run as root
+if [ "$(id -u)" -ne 0 ]; then
+    echo "This script must be run as root."
+    exit 1
 fi
 
-echo "Detected Linux distribution: $DISTRO"
-
-case "$DISTRO" in
-  "ubuntu" | "debian")
-    echo "Installing Docker on $DISTRO..."
-    install_docker_deb $DISTRO
-    ;;
-  "centos")
-    echo "Installing Docker on CentOS..."
-    install_docker_centos
-    ;;
-  "alpine")
-    echo "Installing Docker on Alpine..."
-    install_docker_alpine
-    ;;
-  "opensuse" | "opensuse-leap" | "opensuse-tumbleweed")
-    echo "Installing Docker on openSUSE..."
-    install_docker_opensuse
-    ;;
-  *)
+# Check which Linux distribution is installed
+if [ -f /etc/debian_version ]; then
+    echo "Detected Debian-based system."
+    DISTRO=debian
+elif [ -f /etc/redhat-release ]; then
+    echo "Detected Red Hat-based system."
+    DISTRO=redhat
+elif [ -f /etc/alpine-release ]; then
+    echo "Detected Alpine Linux."
+    DISTRO=alpine
+else
     echo "Unsupported Linux distribution."
     exit 1
-    ;;
-esac
+fi
 
-echo "Docker installed successfully."
+# Install Docker
+echo "Installing Docker..."
+if [ "$DISTRO" == "debian" ] || [ "$DISTRO" == "ubuntu" ]; then
+    apt-get update
+    apt-get install -y docker.io
+elif [ "$DISTRO" == "redhat" ]; then
+    yum install -y docker
+elif [ "$DISTRO" == "alpine" ]; then
+    apk add docker
+fi
 
-# Prompt user for Docker Compose installation
-while true; do
-  read -p "Do you want to install Docker Compose? (y/n): " yn
-  case $yn in
-    [Yy]* )
-      echo "Installing
+# Start Docker
+echo "Starting Docker..."
+systemctl start docker
+
+# Install Docker Compose
+read -p "Do you want to install Docker Compose? (y/n) " INSTALL_COMPOSE
+if [ "$INSTALL_COMPOSE" == "y" ]; then
+    echo "Installing Docker Compose..."
+    if [ "$DISTRO" == "debian" ] || [ "$DISTRO" == "ubuntu" ]; then
+        apt-get install -y docker-compose
+    elif [ "$DISTRO" == "redhat" ]; then
+        yum install -y epel-release
+        yum install -y python-pip
+        pip install docker-compose
+    elif [ "$DISTRO" == "alpine" ]; then
+        apk add py-pip
+        pip install docker-compose
+    fi
+fi
+
+echo "Docker and Docker Compose installation completed."
