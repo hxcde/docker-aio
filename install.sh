@@ -10,14 +10,14 @@ install_docker_deb() {
   curl -fsSL https://download.docker.com/linux/${1}/gpg | sudo apt-key add -
   sudo add-apt-repository "deb [arch=$(dpkg --print-architecture)] https://download.docker.com/linux/${1} $(lsb_release -cs) stable"
   sudo apt-get update
-  sudo apt-get install -y docker-ce
+  sudo apt-get install -y docker-ce docker-ce-cli containerd.io || { echo "Unable to install 'docker-ce'. Exiting."; exit 1; }
 }
 
 # Function to install Docker on CentOS
 install_docker_centos() {
   sudo yum install -y yum-utils device-mapper-persistent-data lvm2
   sudo yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
-  sudo yum install -y docker-ce
+  sudo yum install -y docker-ce docker-ce-cli containerd.io
   sudo systemctl enable docker
   sudo systemctl start docker
 }
@@ -84,15 +84,4 @@ echo "Docker installed successfully."
 
 # Prompt user for Docker Compose installation
 while true; do
-  read -p "Do you want to install Docker Compose? (y/n): " yn
-  case $yn in
-    [Yy]* )
-      echo "Installing Docker Compose..."
-      install_docker_compose
-      echo "Docker Compose installed successfully."
-      break
-      ;;
-    [Nn]* )
-      echo "Skipping Docker Compose installation."
-      break
-      ;;
+  read -p "Do you want to install Docker Compose? (y/n): "
