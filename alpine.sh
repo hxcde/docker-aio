@@ -1,3 +1,4 @@
+#!/bin/bash
 echo Starting docker installation
 apk add docker
 rc-update add docker boot
