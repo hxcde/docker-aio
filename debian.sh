@@ -1,4 +1,5 @@
 echo installing Docker
+apt-get install sudo
 sudo apt-get update
 sudo apt-get install ca-certificates curl gnupg lsb-release -y
 sudo mkdir -p /etc/apt/keyrings
