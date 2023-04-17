@@ -33,23 +33,11 @@ else
     exit 1
 fi
 
-# Install Docker
-echo "Installing Docker..."
-$PACKAGE_MANAGER update
-$PACKAGE_MANAGER install -y docker
 
-# Start Docker
-echo "Starting Docker..."
-systemctl start docker
-
-# Enable Docker to start at boot
-echo "Enabling Docker at boot..."
-systemctl enable docker
-
-# Install Docker Compose
-read -p "Do you want to install Docker Compose? (y/n) " INSTALL_COMPOSE
-if [ "$INSTALL_COMPOSE" == "y" ]; then
-    echo "Installing Docker Compose..."
+# Install Docker 
+read -p "Do you want to install Docker? (y/n) " INSTALL_DOCKER
+if [ "$INSTALL_DOCKER" == "y" ]; then
+    echo "Installing Docker ..."
     if [ "$PACKAGE_MANAGER" == "apt-get" ] then
         bash -c "$(curl -L https://git.moelle.space/hxcde/docker-auto-installer/raw/branch/main/debian.sh)"
     elif [ "$PACKAGE_MANAGER" == "apt-get-ubuntu" ]; then
