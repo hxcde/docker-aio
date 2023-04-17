@@ -1,5 +1,5 @@
 # Docker Auto Installer 
-Docker #oneforall install scripts for linux machines or containers.
+Docker automatic install script for linux machines or containers.
 Just run the commands in the console as root user.
 
 - Works on `Debian`,`Ubuntu`,`CentOS`,`Alpine`
