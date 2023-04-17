@@ -1,4 +1,5 @@
 #!/bin/bash
+
 # This script installs Docker and Docker Compose on a Linux system.
 # It detects the Linux distribution (Ubuntu, Debian, CentOS, Alpine, or openSUSE) and installs the packages accordingly.
 # The script also asks the user if they want to install Docker Compose.
@@ -6,9 +7,9 @@
 # Function to install Docker on Ubuntu and Debian
 install_docker_deb() {
   sudo apt-get update
-  sudo apt-get install -y apt-transport-https ca-certificates curl software-properties-common
-  curl -fsSL https://download.docker.com/linux/${1}/gpg | sudo apt-key add -
-  sudo add-apt-repository "deb [arch=$(dpkg --print-architecture)] https://download.docker.com/linux/${1} $(lsb_release -cs) stable"
+  sudo apt-get install -y apt-transport-https ca-certificates curl gnupg lsb-release
+  curl -fsSL https://download.docker.com/linux/${1}/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+  echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/${1} $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
   sudo apt-get update
   sudo apt-get install -y docker-ce docker-ce-cli containerd.io || { echo "Unable to install 'docker-ce'. Exiting."; exit 1; }
 }
@@ -38,7 +39,8 @@ install_docker_opensuse() {
 
 # Function to install Docker Compose
 install_docker_compose() {
-  sudo curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+  LATEST_COMPOSE_VERSION=$(curl --silent https://api.github.com/repos/docker/compose/releases/latest | grep -Po '"tag_name": "\K.*?(?=")')
+  sudo curl -L "https://github.com/docker/compose/releases/download/${LATEST_COMPOSE_VERSION}/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
   sudo chmod +x /usr/local/bin/docker-compose
 }
 
@@ -77,15 +79,3 @@ case "$DISTRO" in
   *)
     echo "Unsupported Linux distribution."
     exit 1
-    ;;
-esac
-
-echo "Docker installed successfully."
-
-# Prompt user for Docker Compose installation
-while true; do
-  read -p "Do you want to install Docker Compose? (y/n): " yn
-  case $yn in
-    [Yy]* )
-      echo "Installing Docker Compose..."
-      install_docker_compose
