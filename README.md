@@ -3,6 +3,13 @@ Docker install scripts for linux machines or containers.
 
 Just run the commands in the console as root user.
 
+sh -c "$(curl -L https://git.moelle.space/hxcde/docker-auto-installer/raw/branch/main/docker-auto-install.sh)"
+
+
+
+
+
+### Old Scripts
 ## Alpine
 First install curl on the machine
 ```bash
