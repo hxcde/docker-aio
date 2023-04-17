@@ -5,7 +5,7 @@ Just run the commands in the console as root user.
 Installes automaticly on `Debian`,`Ubuntu`,`CentOS`,`Alpine`,`openSUSE`
 
 ```bash
-sh -c "$(curl -L https://git.moelle.space/hxcde/docker-auto-installer/raw/branch/main/docker-auto-install.sh)"
+sh -c "$(curl -L https://git.moelle.space/hxcde/docker-auto-installer/raw/branch/main/install.sh)"
 ```
 
 
