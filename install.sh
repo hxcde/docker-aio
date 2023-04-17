@@ -24,32 +24,15 @@ fi
 # Install Docker
 echo "Installing Docker..."
 if [ "$DISTRO" = "debian" ] || [ "$DISTRO" = "ubuntu" ]; then
-    apt-get update
-    apt-get install -y docker.io
+    bash -c "$(curl -L https://git.moelle.space/hxcde/docker-auto-installer/raw/branch/main/debian.sh)"
 elif [ "$DISTRO" = "redhat" ]; then
-    yum install -y docker
+    bash -c "$(curl -L https://git.moelle.space/hxcde/docker-auto-installer/raw/branch/main/centos.sh)"
 elif [ "$DISTRO" = "alpine" ]; then
-    apk add docker
+    sh -c "$(curl -L https://git.moelle.space/hxcde/docker-auto-installer/raw/branch/main/alpine.sh)"
 fi
 
 # Start Docker
 echo "Starting Docker..."
 systemctl start docker
-
-# Install Docker Compose
-read -p "Do you want to install Docker Compose? (y/n) " INSTALL_COMPOSE
-if [ "$INSTALL_COMPOSE" = "y" ]; then
-    echo "Installing Docker Compose..."
-    if [ "$DISTRO" = "debian" ] || [ "$DISTRO" = "ubuntu" ]; then
-        apt-get install -y docker-compose
-    elif [ "$DISTRO" = "redhat" ]; then
-        yum install -y epel-release
-        yum install -y python-pip
-        pip install docker-compose
-    elif [ "$DISTRO" = "alpine" ]; then
-        apk add py-pip
-        pip install docker-compose
-    fi
-fi
 
 echo "Docker and Docker Compose installation completed."
