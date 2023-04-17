@@ -87,5 +87,4 @@ while true; do
   read -p "Do you want to install Docker Compose? (y/n): " yn
   case $yn in
     [Yy]* )
-      echo "Installing Docker Compose..."
-      install_docker_compose
+      echo "Installing
