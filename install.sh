@@ -9,19 +9,19 @@ fi
 # Check which Linux distribution is installed
 if [ -f /etc/os-release ]; then
     . /etc/os-release
-    if [[ "$ID" == "ubuntu" ]]; then
+    if [ "$ID" == "ubuntu" ]; then
         echo "Detected Ubuntu."
         PACKAGE_MANAGER="apt-get-ubuntu"
-    elif [[ "$ID" == "opensuse" ]]; then
+    elif [ "$ID" == "opensuse" ]; then
         echo "Detected openSUSE."
         PACKAGE_MANAGER="zypper"
-    elif [[ "$ID" == "debian" ]]; then
+    elif [ "$ID" == "debian" ]; then
         echo "Detected Debian."
         PACKAGE_MANAGER="apt-get"
-    elif [[ "$ID" == "alpine" ]]; then
+    elif [ "$ID" == "alpine" ]; then
         echo "Detected Alpine Linux."
         PACKAGE_MANAGER="apk"
-    elif [[ "$ID" == "centos" ]]; then
+    elif [ "$ID" == "centos" ]; then
         echo "Detected CentOS."
         PACKAGE_MANAGER="yum"
     else
