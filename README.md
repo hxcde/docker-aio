@@ -1,11 +1,4 @@
 # Docker AIO
-```bash
-     _            _                        _       
-  __| | ___   ___| | _____ _ __       __ _(_) ___  
- / _` |/ _ \ / __| |/ / _ \ '__|____ / _` | |/ _ \ 
-| (_| | (_) | (__|   <  __/ | |_____| (_| | | (_) |
- \__,_|\___/ \___|_|\_\___|_|        \__,_|_|\___/                                                           
-```
 
 Docker all in one install script for linux machines or containers.
 Just run the commands in the console as root user.
