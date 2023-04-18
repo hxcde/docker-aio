@@ -14,6 +14,8 @@ sh -c "$(curl -L http://gitlink.moelle.space/docker-aio)"
 
 <br>
 <br>
+<details> 
+<summary>Old, individual OS installation scripts </summary>
 
 ## Individual systems
 ### Alpine
@@ -49,3 +51,4 @@ Paste the script in the machines console
 ```bash
 bash -c "$(curl -L https://git.moelle.space/hxcde/docker-auto-installer/raw/branch/main/centos.sh)"
 ```
+</details> 
