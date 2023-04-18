@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Docker-aio ascii
+curl https://git.moelle.space/hxcde/docker-auto-installer/raw/branch/main/ascii
+
 # Check if script is being run as root
 if [ "$(id -u)" -ne 0 ]; then
     echo "This script must be run as root."
