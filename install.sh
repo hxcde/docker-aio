@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Docker-aio ascii
-curl https://git.moelle.space/hxcde/docker-auto-installer/raw/branch/main/ascii
+curl https://git.moelle.space/hxcde/docker-aio/raw/branch/main/ascii
 
 # Check if script is being run as root
 if [ "$(id -u)" -ne 0 ]; then
@@ -42,15 +42,15 @@ read -p "Do you want to install Docker? (y/n) " INSTALL_DOCKER
 if [ "$INSTALL_DOCKER" = "y" ]; then
     echo "Installing Docker ..."
     if [ "$PACKAGE_MANAGER" = "apt-get" ]; then
-        bash -c "$(curl -L https://git.moelle.space/hxcde/docker-auto-installer/raw/branch/main/debian.sh)"
+        bash -c "$(curl -L https://git.moelle.space/hxcde/docker-aio/raw/branch/main/debian.sh)"
     elif [ "$PACKAGE_MANAGER" = "apt-get-ubuntu" ]; then
-        bash -c "$(curl -L https://git.moelle.space/hxcde/docker-auto-installer/raw/branch/main/ubuntu.sh)"
+        bash -c "$(curl -L https://git.moelle.space/hxcde/docker-aio/raw/branch/main/ubuntu.sh)"
     elif [ "$PACKAGE_MANAGER" = "zypper" ]; then
-        sh -c "$(curl -L https://git.moelle.space/hxcde/docker-auto-installer/raw/branch/main/opensuse.sh)"
+        sh -c "$(curl -L https://git.moelle.space/hxcde/docker-aio/raw/branch/main/opensuse.sh)"
     elif [ "$PACKAGE_MANAGER" = "apk" ]; then
-        sh -c "$(curl -L https://git.moelle.space/hxcde/docker-auto-installer/raw/branch/main/alpine.sh)"
+        sh -c "$(curl -L https://git.moelle.space/hxcde/docker-aio/raw/branch/main/alpine.sh)"
     elif [ "$PACKAGE_MANAGER" = "yum" ]; then
-        bash -c "$(curl -L https://git.moelle.space/hxcde/docker-auto-installer/raw/branch/main/centos.sh)"
+        bash -c "$(curl -L https://git.moelle.space/hxcde/docker-aio/raw/branch/main/centos.sh)"
     fi
 fi
 
