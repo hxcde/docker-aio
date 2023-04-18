@@ -6,7 +6,7 @@
 > Just run the commands in the console as root user.
 
 - Works on `Debian`,`Ubuntu`,`CentOS`,`Alpine`,`OpenSuse`
-- You need to install [x] curl on your system.
+- You need to install curl on your system.
 #### Paste the script in the machines console, thats all!
 ```bash
 sh -c "$(curl -L http://gitlink.moelle.space/docker-aio)"
