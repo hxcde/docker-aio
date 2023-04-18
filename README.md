@@ -3,7 +3,8 @@
 <br>
 
 > Docker all in one install script for linux machines or containers.<br>
-> Just run the commands in the console as root user.
+> Just run the commands in the console as root user.<br>
+> The Script installs docker and docker-compose
 
 - Works on `Debian`,`Ubuntu`,`CentOS`,`Alpine`,`OpenSuse`
 - You need to install curl on your system.
