@@ -26,7 +26,7 @@ apk add curl
 ```
 Then paste the script in the machines console
 ```bash
-sh -c "$(curl -L https://git.moelle.space/hxcde/docker-auto-installer/raw/branch/main/alpine.sh)"
+sh -c "$(curl -L https://git.moelle.space/hxcde/docker-aio/raw/branch/main/alpine.sh)"
 ```
 - I recommend using Alpine 3.15 and not 3.16. Alpine 3.16 creates OCI errors.
 ### Debian
@@ -36,7 +36,7 @@ apt-get install curl sudo -y
 ```
 Then paste the script in the machines console
 ```bash
-bash -c "$(curl -L https://git.moelle.space/hxcde/docker-auto-installer/raw/branch/main/debian.sh)"
+bash -c "$(curl -L https://git.moelle.space/hxcde/docker-aio/raw/branch/main/debian.sh)"
 ```
 ### Ubuntu
 First install curl on the machine
@@ -45,11 +45,11 @@ apt-get install curl -y
 ```
 Then paste the script in the machines console
 ```bash
-bash -c "$(curl -L https://git.moelle.space/hxcde/docker-auto-installer/raw/branch/main/ubuntu.sh)"
+bash -c "$(curl -L https://git.moelle.space/hxcde/docker-aio/raw/branch/main/ubuntu.sh)"
 ```
 ### CentOS
 Paste the script in the machines console
 ```bash
-bash -c "$(curl -L https://git.moelle.space/hxcde/docker-auto-installer/raw/branch/main/centos.sh)"
+bash -c "$(curl -L https://git.moelle.space/hxcde/docker-aio/raw/branch/main/centos.sh)"
 ```
 </details> 
