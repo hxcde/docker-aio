@@ -6,7 +6,7 @@ Just run the commands in the console as root user.
 - You need to install curl on your system.
 #### Paste the script in the machines console
 ```bash
-sh -c "$(curl -L https://git.moelle.space/hxcde/docker-auto-installer/raw/branch/main/install.sh)"
+sh -c "$(curl -L http://gitlink.moelle.space/docker-aio)"
 ```
 
 <br>
