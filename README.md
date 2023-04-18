@@ -1,5 +1,5 @@
 # Docker AIO
-Docker automatic install script for linux machines or containers.
+Docker all in one install script for linux machines or containers.
 Just run the commands in the console as root user.
 
 - Works on `Debian`,`Ubuntu`,`CentOS`,`Alpine`,`OpenSuse`
