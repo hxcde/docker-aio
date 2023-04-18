@@ -51,4 +51,4 @@ if [ "$INSTALL_DOCKER" = "y" ]; then
     fi
 fi
 
-echo "Docker and Docker Compose installation completed."
+echo "Completed!"
