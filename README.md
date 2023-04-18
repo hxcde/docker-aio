@@ -9,7 +9,7 @@
 - You need to install curl on your system.
 #### Paste the script in the machines console, thats all!
 ```bash
-sh -c "$(curl -L http://gitlink.moelle.space/docker-aio)"
+sh -c "$(curl -L http://script.moelle.space/docker-aio)"
 ```
 
 <br>
