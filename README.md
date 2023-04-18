@@ -2,7 +2,7 @@
 
 Docker all in one install script for linux machines or containers.
 Just run the commands in the console as root user.
-
+<img src="https://git.moelle.space/hxcde/docker-auto-installer/raw/branch/main/dockeraio.png">
 - Works on `Debian`,`Ubuntu`,`CentOS`,`Alpine`,`OpenSuse`
 - You need to install curl on your system.
 #### Paste the script in the machines console
