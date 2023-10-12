@@ -13,6 +13,11 @@
 sh -c "$(curl -L https://script.moelle.space/docker-aio)"
 ```
 
+#### For Raspberry Pi (Raspbian)
+```bash
+sh -c "$(curl -L https://git.moelle.space/hxcde/docker-aio/raw/branch/main/raspbian.sh)"
+```
+
 <br>
 <br>
 <details> 
