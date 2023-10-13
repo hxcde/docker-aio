@@ -6,16 +6,11 @@
 > Just run the commands in the console as root user.<br>
 > The Script installs docker and docker-compose
 
-- Works on `Debian`,`Ubuntu`,`CentOS`,`Alpine`,`OpenSuse`
+- Works on `Debian`,`Ubuntu`,`CentOS`,`Alpine`,`OpenSuse`, `Raspbian`
 - You need to install curl on your system.
 #### Paste the script in the machines console, thats all!
 ```bash
 sh -c "$(curl -L https://script.moelle.space/docker-aio)"
-```
-
-#### For Raspberry Pi (Raspbian)
-```bash
-sh -c "$(curl -L https://git.moelle.space/hxcde/docker-aio/raw/branch/main/raspbian.sh)"
 ```
 
 <br>
@@ -43,6 +38,7 @@ Then paste the script in the machines console
 ```bash
 bash -c "$(curl -L https://git.moelle.space/hxcde/docker-aio/raw/branch/main/debian.sh)"
 ```
+
 ### Ubuntu
 First install curl on the machine
 ```bash
