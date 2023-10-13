@@ -38,7 +38,15 @@ Then paste the script in the machines console
 ```bash
 bash -c "$(curl -L https://git.moelle.space/hxcde/docker-aio/raw/branch/main/debian.sh)"
 ```
-
+### Raspbian
+First install curl and sudo on the machine
+```bash
+apt-get install curl sudo -y
+```
+Then paste the script in the machines console
+```bash
+bash -c "$(curl -L https://git.moelle.space/hxcde/docker-aio/raw/branch/main/raspbian.sh)"
+```
 ### Ubuntu
 First install curl on the machine
 ```bash
