@@ -18,6 +18,9 @@ if [ -f /etc/os-release ]; then
     elif [ "$ID" = "opensuse" ]; then
         echo "Detected openSUSE."
         PACKAGE_MANAGER="zypper"
+    elif [ "$ID" = "raspbian" ]; then
+        echo "Detected Raspbian."
+        PACKAGE_MANAGER="apt-get-raspbian"
     elif [ "$ID" = "debian" ]; then
         echo "Detected Debian."
         PACKAGE_MANAGER="apt-get"
@@ -45,6 +48,8 @@ if [ "$INSTALL_DOCKER" = "y" ]; then
         bash -c "$(curl -L https://git.moelle.space/hxcde/docker-aio/raw/branch/main/debian.sh)"
     elif [ "$PACKAGE_MANAGER" = "apt-get-ubuntu" ]; then
         bash -c "$(curl -L https://git.moelle.space/hxcde/docker-aio/raw/branch/main/ubuntu.sh)"
+    elif [ "$PACKAGE_MANAGER" = "apt-get-raspbian" ]; then
+        bash -c "$(curl -L https://git.moelle.space/hxcde/docker-aio/raw/branch/main/raspbian.sh)"    
     elif [ "$PACKAGE_MANAGER" = "zypper" ]; then
         sh -c "$(curl -L https://git.moelle.space/hxcde/docker-aio/raw/branch/main/opensuse.sh)"
     elif [ "$PACKAGE_MANAGER" = "apk" ]; then
